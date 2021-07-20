@@ -1,0 +1,17 @@
+<h2>{{restaurant.name}}</h2>
+<section>
+    <article class="restaurant">
+        <img src={{restaurant.image}} />
+        <br />
+        <h3>MENU:</h3>
+        {{!-- restaurant.Menus because from the sequelize query --}}
+        {{#each restaurant.Menus}}
+            <h2>{{this.title}}</h2> 
+                {{#each this.MenuItems}}
+                    <li>{{this.name}}</li>
+                    <li>{{this.price}}</li>
+                {{/each}} 
+        {{/each}}    
+    </article>
+    <a class="btn" href="/web/restaurants">Back to Restaurants List</a>
+</section>
